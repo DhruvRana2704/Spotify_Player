@@ -46,6 +46,8 @@ window.addEventListener("keypress",(evt)=>{
                 gif.style.opacity=1;
                 btn[songIndex].classList.add("fa-circle-pause")
                 btn[songIndex].classList.remove("fa-circle-play")
+                songItem[songIndex].classList.add("green");
+                songItem[songIndex].classList.remove("songItem");
     
             }
          
@@ -74,12 +76,10 @@ masterPlay.addEventListener("click",()=>
         songItem[songIndex].classList.add("green");
         songItem[songIndex].classList.remove("songItem");
         
-        console.log(songIndex)
         audio.play();
         masterPlay.classList.remove("fa-circle-play");
         masterPlay.classList.add("fa-circle-pause");
         gif.style.opacity=1;
-        console.log("Index",songIndex)
         btn[songIndex].classList.add("fa-circle-pause")
         btn[songIndex].classList.remove("fa-circle-play")
  
@@ -103,7 +103,7 @@ masterPlay.addEventListener("click",()=>
 //Updating the time of the song xx:xx
 function changeTime()
 {
-curr1.innerText=formatTwoDigits(parseInt(audio.currentTime)%60);
+    curr1.innerText=formatTwoDigits(parseInt(audio.currentTime)%60);
     curr.innerText=formatTwoDigits(parseInt((audio.currentTime)/60));
     dur.innerText=formatTwoDigits(parseInt((audio.duration)/60));
     dur1.innerText=formatTwoDigits(parseInt((audio.duration)%60));
@@ -123,10 +123,12 @@ audio.addEventListener('timeupdate',()=>{
         allPlay();  //Update the pplay button in the song list
         btn[songIndex].classList.add("fa-circle-pause") //Changes the play button for the current palying song
         btn[songIndex].classList.remove("fa-circle-play")
-        songNameBottom.value=songs[songIndex].songName;
-        songNameBottom.innerText=songs[songIndex].songName;
+        songItem[songIndex].classList.add("green"); //Adds green background to the current playing song
+        songItem[songIndex].classList.remove("songItem");
         masterPlay.classList.add("fa-circle-pause")
         masterPlay.classList.remove("fa-circle-play")},2000)
+        songNameBottom.value=songs[songIndex].songName;
+        songNameBottom.innerText=songs[songIndex].songName;
     }
     //Update the progress bar as the song progresses
     progress=parseInt((audio.currentTime/audio.duration)*100)
@@ -170,16 +172,14 @@ const allPlay=()=>{
 //Playing the song when the play button is clicked on the song list
 btn.forEach((element,i)=>{
     element.addEventListener("click",(evt)=>{
-    audio.currentTime=0;
+    let pos=audio.currentTime;
     songIndex=parseInt(evt.target.id);
     //If the song is already playing, pause it
     if(evt.target.classList.contains("fa-circle-pause"))
     {
-        let pos=audio.currentTime;
-        count+=2;
-   
         if(count%2==0)
         {
+            count+=2;
            audio.currentTime=pos;
            audio.pause();
            evt.target.classList.add("fa-circle-play")
