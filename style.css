@@ -8,6 +8,25 @@
 body{
     background-color: antiquewhite;
 }
+
+.green
+{
+    height: 40px;
+    background-color: green;
+    color: black;
+    display: flex;
+    width: 30vw;
+    border-radius:50px ;
+    margin: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+.green img {
+    margin: 0 15px ;
+     border-radius: 34px;
+     height: 30px; 
+     
+ } 
 nav{
      font-family: "Ubuntu", sans-serif;
     background-color: black;
@@ -121,8 +140,22 @@ nav ul li
     transition: opacity 0.3s ease-in;
 }
 
+.runtime {
+    
+    position: absolute;
+    right: 10vw;
+}
+
 @media screen and (max-width:  768px) {
+    nav
+    {
+        height: 5vh;
+    }
+    .brand img{
+        height: 30px;
+    }
     .container {
+        height: 70vh;
         justify-content: center;
       background-color: black;
       background-image: none;
@@ -141,23 +174,56 @@ nav ul li
     }
     .container h1
     {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding-left: 1rem;
     }
     .songItem{
         width: 80vw;
         text-wrap:wrap;
+        font-size: smallers;
     }
     .icons{
-        margin-top: 30px;
+        font-size: smaller;
+        margin-top: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .songInfo {
 
+        position: absolute;
+        left: -15vw;
         display: flex;
         text-wrap: nowrap;
         margin-bottom: 45px;
+        opacity: 1;
     }      
+    .runtime
+    {
+        font-size: smaller;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: -15vw;
+        bottom: 15vw;
+    }
+    
+.green
+{
+    height: 40px;
+    background-color: green;
+    color: black;
+    display: flex;
+    width: 80vw;
+    border-radius:50px ;
+    margin: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+.green img {
+    margin: 0 15px ;
+     border-radius: 34px;
+     height: 30px; 
+     
+ } 
   }
