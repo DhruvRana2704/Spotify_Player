@@ -126,9 +126,10 @@ audio.addEventListener('timeupdate',()=>{
         songItem[songIndex].classList.add("green"); //Adds green background to the current playing song
         songItem[songIndex].classList.remove("songItem");
         masterPlay.classList.add("fa-circle-pause")
-        masterPlay.classList.remove("fa-circle-play")},2000)
-        songNameBottom.value=songs[songIndex].songName;
-        songNameBottom.innerText=songs[songIndex].songName;
+        masterPlay.classList.remove("fa-circle-play")
+        songNameBottom.value=songs[songIndex+1].songName;
+        songNameBottom.innerText=songs[songIndex+1].songName;},2000)
+        
     }
     //Update the progress bar as the song progresses
     progress=parseInt((audio.currentTime/audio.duration)*100)
