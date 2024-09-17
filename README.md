@@ -10,9 +10,9 @@ In this project, I've created a music player using HTML, CSS and JavaScript whic
 -  **Display the SongName and add a gif to show the song playing**
 
   ## Screenshots:
-  -Normal Design:
+  - Normal Design:
   ![Screenshot (500)](https://github.com/user-attachments/assets/61e039ac-706a-4927-ba50-bbebf85c42df)
 
-  -Responsive Design:
+  - Responsive Design:
   
   ![image](https://github.com/user-attachments/assets/f3ed0430-01bb-461c-9204-a172949ead1c)
